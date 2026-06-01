@@ -16,7 +16,7 @@ import {
   Tv
 } from 'lucide-react';
 import Mascot from '@/components/cartoon/Mascot';
-import { RetroStar, HappyFlower, CartoonLightning, SpeechBubble, NanoBanana } from '@/components/cartoon/Doodles';
+import { RetroStar, HappyFlower, CartoonLightning, SpeechBubble } from '@/components/cartoon/Doodles';
 
 const TOTAL_SLIDES = 20;
 
@@ -206,18 +206,7 @@ export default function Home() {
           style={{ backgroundColor: 'var(--pink)' }}
         >
           <span className="bg-number" style={{ color: 'white', opacity: 0.15 }}>?</span>
-          <div className="slide-inner text-center flex flex-col items-center justify-center gap-6 relative">
-            
-            {/* Cute Nano Banana mascot waving from the side */}
-            <motion.div
-              initial={{ scale: 0, rotate: -30, y: 30 }}
-              animate={activeSlide === 1 ? { scale: 1, rotate: 0, y: 0 } : { scale: 0, rotate: -30, y: 30 }}
-              transition={{ type: 'spring', stiffness: 120, damping: 10, delay: 0.4 }}
-              className="absolute -left-12 -top-16 hidden md:block"
-            >
-              <NanoBanana className="w-28 h-28" />
-            </motion.div>
-
+          <div className="slide-inner text-center flex flex-col items-center justify-center gap-6">
             <motion.div
               custom={0.1}
               initial="hidden"

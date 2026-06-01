@@ -50,94 +50,15 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
             {/* Inner Spiral Pattern */}
             <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.45)_10%,transparent_11%)] bg-[length:14px_14px]" />
             
-            {/* Hand-drawn Retro Cartoon Network Vector Logo */}
-            <svg 
-              viewBox="0 0 160 160" 
-              className="relative w-[135px] h-[135px]"
-              style={{ filter: 'drop-shadow(3px 3px 0px rgba(30,30,30,0.85))' }}
-            >
-              <defs>
-                <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="2.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <g stroke="#1E1E1E" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" fill="none">
-                
-                {/* 1. Neon Cyan Lightning Bolt emerging from top-right */}
-                <path 
-                  d="M102 52 L128 20 L114 50 L130 50 L98 84 L108 58 Z" 
-                  fill="#00F0FF" 
-                  stroke="#1E1E1E" 
-                  strokeWidth="5.5"
-                  style={{ filter: 'drop-shadow(2px 2px 0px #1E1E1E)' }}
-                />
-
-                {/* 2. Bold Swooping Upper Eyebrow (anime-inspired brushstroke) */}
-                <path 
-                  d="M28 48 C48 26, 92 24, 118 42" 
-                  stroke="#1E1E1E" 
-                  strokeWidth="13" 
-                  strokeLinecap="round"
-                />
-                <path 
-                  d="M28 48 C48 26, 92 24, 118 42" 
-                  stroke="#FFFFFF" 
-                  strokeWidth="7" 
-                  strokeLinecap="round"
-                />
-
-                {/* 3. Bold Upper Eyelid */}
-                <path 
-                  d="M32 72 C50 50, 90 48, 112 66" 
-                  stroke="#1E1E1E" 
-                  strokeWidth="11" 
-                  strokeLinecap="round"
-                />
-                <path 
-                  d="M32 72 C50 50, 90 48, 112 66" 
-                  stroke="#FFFFFF" 
-                  strokeWidth="5" 
-                  strokeLinecap="round"
-                />
-
-                {/* 4. Bold Lower Eyelid */}
-                <path 
-                  d="M36 94 C54 108, 86 108, 106 92" 
-                  stroke="#1E1E1E" 
-                  strokeWidth="11" 
-                  strokeLinecap="round"
-                />
-                <path 
-                  d="M36 94 C54 108, 86 108, 106 92" 
-                  stroke="#FFFFFF" 
-                  strokeWidth="5" 
-                  strokeLinecap="round"
-                />
-
-                {/* 5. Eyeball Base (White) */}
-                <circle cx="72" cy="82" r="22" fill="#FFFFFF" stroke="#1E1E1E" strokeWidth="5.5" />
-                
-                {/* 6. Orange Crescent Arc at the bottom of the iris area */}
-                <path 
-                  d="M52 86 A 20 20 0 0 0 92 86 A 18 18 0 0 1 52 86" 
-                  fill="#FF6B00" 
-                  stroke="#1E1E1E" 
-                  strokeWidth="3.5" 
-                />
-                
-                {/* 7. Central Black Pupil */}
-                <circle cx="72" cy="80" r="11" fill="#1E1E1E" />
-                
-                {/* 8. Small White Dot Highlight in the upper iris */}
-                <circle cx="67" cy="75" r="4.5" fill="#FFFFFF" stroke="none" />
-
-              </g>
-            </svg>
+            {/* The Generated Premium Cartoon Network Logo Image (Transparent Background) */}
+            <img 
+              src="/images/logo-cartoon.png" 
+              alt="Mr Nobel Logo" 
+              className="relative w-[130px] h-[130px] rounded-full object-cover scale-[1.08]"
+              style={{ 
+                filter: 'drop-shadow(3px 3px 0px rgba(30,30,30,0.85))',
+              }}
+            />
           </div>
           
           {/* Floating Stars around it */}
