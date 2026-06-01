@@ -184,14 +184,21 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              {/* Cartoon Network styled logo wrapper */}
+              {/* Raw Logo Image with No Background or Frame */}
               <div className="flex items-center justify-center relative">
                 <motion.div
                   initial={{ scale: 0.6, rotate: -20, opacity: 0 }}
                   animate={activeSlide === 0 ? { scale: 1, rotate: 0, opacity: 1 } : { scale: 0.6, rotate: -20, opacity: 0 }}
                   transition={{ type: 'spring', stiffness: 120, damping: 10, delay: 0.3 }}
                 >
-                  <Mascot pose="logo-badge" />
+                  <img 
+                    src="/images/logo.png" 
+                    alt="Mr Nobel Logo" 
+                    className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] object-contain rounded-2xl select-none pointer-events-none"
+                    style={{
+                      filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.2))'
+                    }}
+                  />
                 </motion.div>
               </div>
             </div>
@@ -676,14 +683,21 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Mascot 1 placeholder balanced */}
+              {/* Raw Logo Image with No Background or Frame */}
               <div className="flex items-center justify-center">
                 <motion.div
-                  initial={{ scale: 0.6, rotate: -20 }}
-                  animate={activeSlide === 7 ? { scale: 1, rotate: 0 } : { scale: 0.6, rotate: -20 }}
-                  transition={{ type: 'spring', stiffness: 100, delay: 0.2 }}
+                  initial={{ scale: 0.6, rotate: -20, opacity: 0 }}
+                  animate={activeSlide === 7 ? { scale: 1, rotate: 0, opacity: 1 } : { scale: 0.6, rotate: -20, opacity: 0 }}
+                  transition={{ type: 'spring', stiffness: 120, damping: 10, delay: 0.2 }}
                 >
-                  <Mascot pose="logo-badge" className="w-[180px] h-[180px]" />
+                  <img 
+                    src="/images/logo.png" 
+                    alt="Mr Nobel Logo" 
+                    className="w-[160px] h-[160px] md:w-[180px] md:h-[180px] object-contain rounded-2xl select-none pointer-events-none"
+                    style={{
+                      filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.15))'
+                    }}
+                  />
                 </motion.div>
               </div>
             </div>
@@ -1100,14 +1114,31 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Logo badge in Cartoon Network badge layout */}
+              {/* Brand Logo2 with Premium Cartoon Frame */}
               <div className="flex items-center justify-center relative">
                 <motion.div
                   initial={{ scale: 0.7, rotate: 15 }}
                   animate={activeSlide === 13 ? { scale: 1.1, rotate: 0 } : { scale: 0.7, rotate: 15 }}
                   transition={{ type: 'spring', stiffness: 120, damping: 10 }}
                 >
-                  <Mascot pose="logo-badge" />
+                  <div className="relative flex items-center justify-center">
+                    {/* Backing Solid Shadow */}
+                    <div 
+                      className="absolute rounded-2xl w-[220px] h-[220px] bg-[#1E1E1E]"
+                      style={{ transform: 'translate(10px, 10px)' }}
+                    />
+                    {/* Main Frame */}
+                    <div 
+                      className="relative rounded-2xl w-[220px] h-[220px] bg-white flex items-center justify-center overflow-hidden"
+                      style={{ border: '5px solid #1E1E1E' }}
+                    >
+                      <img 
+                        src="/images/logo2.jpeg" 
+                        alt="Mr Nobel Brand Logo" 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -1594,7 +1625,14 @@ export default function Home() {
               animate={activeSlide === 19 ? { scale: 1, rotate: 0, opacity: 1 } : { scale: 0.6, rotate: -20, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 120, damping: 10 }}
             >
-              <Mascot pose="logo-badge" />
+              <img 
+                src="/images/logo.png" 
+                alt="Mr Nobel Logo" 
+                className="w-[180px] h-[180px] md:w-[220px] md:h-[220px] object-contain rounded-2xl select-none pointer-events-none"
+                style={{
+                  filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.2))'
+                }}
+              />
             </motion.div>
             
             <motion.p 

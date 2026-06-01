@@ -52,7 +52,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
             
             {/* The Real Logo Image */}
             <img 
-              src="/images/logo.jpeg" 
+              src="/images/logo.png" 
               alt="Mr Nobel Logo" 
               className="relative w-[130px] h-[130px] rounded-full object-cover"
               style={{ border: '4px solid #1E1E1E' }}
