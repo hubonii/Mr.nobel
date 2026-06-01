@@ -4,6 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Mr Nobel — Brand & Content Program 2026",
   description: "مستر نوبل — برنامج صناعة المحتوى والهوية البصرية 2026. العقل الفضولي الذي لا يمكنك التوقف عن متابعته.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  }
 };
 
 export default function RootLayout({
