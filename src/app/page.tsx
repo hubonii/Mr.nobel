@@ -977,8 +977,9 @@ export default function Home() {
             </motion.p>
             
             {/* Bounce character animation */}
-            <div className="flex flex-row-reverse justify-center gap-4 my-6 select-none">
-              {['هـ', 'ـا', 'لـ', 'ـي', ' ', 'هـ', 'ـا', 'لـ', 'ـو', '!'].map((char, index) => (
+            {/* Bounce word animation */}
+            <div className="flex justify-center gap-8 my-6 select-none" dir="rtl">
+              {['هالي', 'هالو!'].map((word, index) => (
                 <motion.span
                   key={index}
                   className="font-black text-6xl md:text-9xl"
@@ -988,7 +989,7 @@ export default function Home() {
                     type: 'spring',
                     stiffness: 140,
                     damping: 8,
-                    delay: 0.2 + index * 0.08
+                    delay: 0.2 + index * 0.15
                   }}
                   style={{
                     color: '#ffffff',
@@ -997,7 +998,7 @@ export default function Home() {
                     WebkitTextStroke: '3px var(--charcoal)'
                   }}
                 >
-                  {char}
+                  {word}
                 </motion.span>
               ))}
             </div>
@@ -1122,50 +1123,56 @@ export default function Home() {
         >
           <div className="slide-inner" dir="rtl">
             <span className="bg-number">ROOM</span>
-            <div className="flex flex-col gap-6 text-right">
-              <div className="flex justify-between items-center w-full">
-                <motion.p 
-                  className="label label-orange"
-                  custom={0.1}
+            <div className="split split-wide gap-8">
+              {/* Right Side: Studio Image and Labels */}
+              <div className="flex flex-col gap-4">
+                <div className="flex justify-between items-center w-full">
+                  <motion.p 
+                    className="label label-orange"
+                    custom={0.1}
+                    initial="hidden"
+                    animate={activeSlide === 14 ? "visible" : "hidden"}
+                    variants={revealVariants}
+                  >
+                    الاستوديو الفعلي
+                  </motion.p>
+                  <span className="text-gray-400 font-black text-xs hidden md:inline">★ تفاعل مع الملاحظات العائمة ★</span>
+                </div>
+                
+                {/* Neo-brutalist cartoonish frame wrapping real studio picture */}
+                <div className="studio-frame relative" style={{ height: '42vh' }}>
+                  <div className="w-full h-full absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/studio.PNG')" }} />
+                  
+                  {/* Interactive Annotations */}
+                  <div className="absolute inset-0 z-20 pointer-events-auto">
+                    <span className="studio-label" style={{ top: '10%', right: '6%' }}>🎯 بورد التحقيقات</span>
+                    <span className="studio-label" style={{ top: '22%', left: '6%' }}>🏈 تيشيرت توم برادي</span>
+                    <span className="studio-label" style={{ bottom: '38%', right: '6%' }}>🛋️ الأريكة الحمراء</span>
+                    <span className="studio-label" style={{ top: '35%', right: '45%' }}>🛹 سكيت بورد ويلسون</span>
+                    <span className="studio-label" style={{ bottom: '25%', left: '10%' }}>📢 لوحة «أعلن هنا»</span>
+                    <span className="studio-label" style={{ bottom: '10%', right: '28%' }}>🎯 لوحة السهام</span>
+                  </div>
+                  
+                  {/* Dark overlay just enough for annotations pop */}
+                  <div className="absolute inset-0 bg-black/15 z-10 pointer-events-none" />
+                </div>
+              </div>
+
+              {/* Left Side: Description */}
+              <div className="flex flex-col justify-center">
+                <motion.div 
+                  className="neo-card text-right"
+                  custom={0.3}
                   initial="hidden"
                   animate={activeSlide === 14 ? "visible" : "hidden"}
                   variants={revealVariants}
                 >
-                  الاستوديو الفعلي
-                </motion.p>
-                <span className="text-gray-400 font-black text-sm hidden md:inline">★ تفاعل مع الملاحظات العائمة ★</span>
+                  <h3 className="font-black text-2xl mb-4 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>حيث يعيش الفضول 🛋️</h3>
+                  <p className="body-text text-sm font-semibold max-w-none leading-relaxed">
+                    أكثر من مجرد موقع تصوير — إنه بطل حقيقي وشخصية قائمة بذاتها في كل حلقة. كل غرض هنا يروي حكاية خاصة: بورد التحريات المعقدة المربوطة بالخيوط الحمراء، التيشيرتات الكلاسيكية، والأريكة المخملية الحمراء التي شهدت مئات الحلقات المشوقة. الاستوديو هو بصمة بصرية تجعل المشاهد يتعرف على محتوى مستر نوبل في أول ثانية.
+                  </p>
+                </motion.div>
               </div>
-
-              {/* Neo-brutalist cartoonish frame wrapping real studio picture */}
-              <div className="studio-frame relative">
-                <div className="w-full h-full absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/studio.PNG')" }} />
-                
-                {/* Interactive Annotations */}
-                <div className="absolute inset-0 z-20 pointer-events-auto">
-                  <span className="studio-label" style={{ top: '15%', right: '10%' }}>🎯 بورد التحقيقات والغموض</span>
-                  <span className="studio-label" style={{ top: '22%', left: '15%' }}>🏈 تيشيرت توم برادي التاريخي</span>
-                  <span className="studio-label" style={{ bottom: '38%', right: '15%' }}>🛋️ الأريكة الحمراء الأيقونية</span>
-                  <span className="studio-label" style={{ top: '35%', right: '48%' }}>🛹 سكيت بورد ويلسون الأحمر</span>
-                  <span className="studio-label" style={{ bottom: '28%', left: '18%' }}>📢 لوحة «أعلن هنا»</span>
-                  <span className="studio-label" style={{ bottom: '15%', right: '35%' }}>🎯 لوحة تصويب السهام</span>
-                </div>
-                
-                {/* Dark overlay just enough for annotations pop */}
-                <div className="absolute inset-0 bg-black/15 z-10 pointer-events-none" />
-              </div>
-
-              <motion.div 
-                className="neo-card text-right mt-4"
-                custom={0.3}
-                initial="hidden"
-                animate={activeSlide === 14 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <h3 className="font-black text-2xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>حيث يعيش الفضول</h3>
-                <p className="body-text text-sm font-semibold max-w-none">
-                  أكثر من مجرد موقع تصوير — إنه بطل حقيقي وشخصية قائمة بذاتها في كل حلقة. كل غرض هنا يروي حكاية خاصة: بورد التحريات المعقدة المربوطة بالخيوط الحمراء، التيشيرتات الكلاسيكية، والأريكة المخملية الحمراء التي شهدت مئات الحلقات المشوقة. الاستوديو هو بصمة بصرية تجعل المشاهد يتعرف على محتوى مستر نوبل في أول ثانية.
-                </p>
-              </motion.div>
             </div>
           </div>
         </section>
@@ -1177,88 +1184,96 @@ export default function Home() {
           ref={el => { slidesRef.current[15] = el; }}
         >
           <div className="slide-inner" dir="rtl">
-            <div className="flex flex-col gap-4 text-right mb-12">
-              <motion.p 
-                className="label label-pink self-start"
-                custom={0.1}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                نبرة الصوت
-              </motion.p>
-              <motion.h2 
-                className="big-text font-black"
-                custom={0.2}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                أول خطوة لجذب الانتباه
-              </motion.h2>
-              <motion.p 
-                className="body-text opacity-90"
-                custom={0.3}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                عفوية، ذكية، وفضولية للغاية. التنقل السلس والواقعي بين العربية والإنجليزية يماثل طبيعة جيلنا الرقمي. كل جملة أو وصف هي خطاف بصري (Hook) صُمم بعناية لإيقاف التمرير وإطلاق نقاش متفاعل في التعليقات.
-              </motion.p>
-            </div>
+            <div className="split split-wide gap-8">
+              {/* Right column: Description */}
+              <div className="flex flex-col gap-4 text-right justify-center">
+                <motion.p 
+                  className="label label-pink self-start"
+                  custom={0.1}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                >
+                  نبرة الصوت
+                </motion.p>
+                <motion.h2 
+                  className="big-text font-black"
+                  custom={0.2}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                >
+                  أول خطوة لجذب الانتباه 📣
+                </motion.h2>
+                <motion.p 
+                  className="body-text opacity-90 text-sm leading-relaxed"
+                  custom={0.3}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                >
+                  عفوية، ذكية، وفضولية للغاية. التنقل السلس والواقعي بين العربية والإنجليزية يماثل طبيعة جيلنا الرقمي. كل جملة أو وصف هي خطاف بصري (Hook) صُمم بعناية لإيقاف التمرير وإطلاق نقاش متفاعل في التعليقات.
+                </motion.p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" style={{ direction: 'rtl' }}>
-              <motion.div 
-                className="neo-card text-right flex flex-col justify-between"
-                custom={0.4}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <div className="font-black text-sm mb-4 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>فيسبوك</div>
-                <p className="text-sm font-bold text-gray-700" style={{ fontFamily: 'var(--font-almarai)' }}>
-                  لما تكتشف إن الاستوديو بتاعك فيه أسرار أكتر من مثلث برمودا 🤫 البورد دي وراها حكايات كتير! #مستر_نوبل
-                </p>
-              </motion.div>
+              {/* Left column: 2x2 grid of cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ direction: 'rtl' }}>
+                <motion.div 
+                  className="neo-card text-right flex flex-col justify-between"
+                  custom={0.4}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <div className="font-black text-sm mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>فيسبوك 📘</div>
+                  <p className="text-xs font-bold text-gray-700 leading-normal" style={{ fontFamily: 'var(--font-almarai)' }}>
+                    لما تكتشف إن الاستوديو بتاعك فيه أسرار أكتر من مثلث برمودا 🤫 البورد دي وراها حكايات كتير! #مستر_نوبل
+                  </p>
+                </motion.div>
 
-              <motion.div 
-                className="neo-card text-right flex flex-col justify-between"
-                custom={0.5}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <div className="font-black text-sm mb-4 text-[#E1306C]" style={{ fontFamily: 'var(--font-cairo)' }}>يوتيوب شورتس</div>
-                <p className="text-sm font-bold text-gray-700" style={{ fontFamily: 'var(--font-almarai)' }}>
-                  أغرب 5 اختراعات تم اكتشافها بالصدفة البحتة... 🤯 الاختراع رقم 3 هيصدمك بجد! #مستر_نوبل
-                </p>
-              </motion.div>
+                <motion.div 
+                  className="neo-card text-right flex flex-col justify-between"
+                  custom={0.5}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <div className="font-black text-sm mb-2 text-[#E1306C]" style={{ fontFamily: 'var(--font-cairo)' }}>يوتيوب شورتس ▶️</div>
+                  <p className="text-xs font-bold text-gray-700 leading-normal" style={{ fontFamily: 'var(--font-almarai)' }}>
+                    أغرب 5 اختراعات تم اكتشافها بالصدفة البحتة... 🤯 الاختراع رقم 3 هيصدمك بجد! #مستر_نوبل
+                  </p>
+                </motion.div>
 
-              <motion.div 
-                className="neo-card text-right flex flex-col justify-between"
-                custom={0.6}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <div className="font-black text-sm mb-4 text-[#38BDF8]" style={{ fontFamily: 'var(--font-cairo)' }}>إنستغرام ريلز</div>
-                <p className="text-sm font-bold text-gray-700" style={{ fontFamily: 'var(--font-almarai)' }}>
-                  سألت 50 شخص في الشارع: مين أعظم لاعب في التاريخ؟ ⚽ الإجابات صدمتني بجد! شوفوا الفيديو كامل 👇
-                </p>
-              </motion.div>
+                <motion.div 
+                  className="neo-card text-right flex flex-col justify-between"
+                  custom={0.6}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <div className="font-black text-sm mb-2 text-[#38BDF8]" style={{ fontFamily: 'var(--font-cairo)' }}>إنستغرام ريلز 📸</div>
+                  <p className="text-xs font-bold text-gray-700 leading-normal" style={{ fontFamily: 'var(--font-almarai)' }}>
+                    سألت 50 شخص في الشارع: مين أعظم لاعب في التاريخ؟ ⚽ الإجابات صدمتني بجد! شوفوا الفيديو كامل 👇
+                  </p>
+                </motion.div>
 
-              <motion.div 
-                className="neo-card text-right flex flex-col justify-between"
-                custom={0.7}
-                initial="hidden"
-                animate={activeSlide === 15 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <div className="font-black text-sm mb-4 text-[#FFFFFF]" style={{ fontFamily: 'var(--font-cairo)' }}>تيك توك</div>
-                <p className="text-sm font-bold text-gray-700" style={{ fontFamily: 'var(--font-almarai)' }}>
-                  لما تكتشف إن عقلك بيستهلك طاقة أكتر من أي عضو تاني في جسمك! 🧠⚡ هالي هالو! #مستر_نوبل
-                </p>
-              </motion.div>
+                <motion.div 
+                  className="neo-card text-right flex flex-col justify-between"
+                  custom={0.7}
+                  initial="hidden"
+                  animate={activeSlide === 15 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <div className="font-black text-sm mb-2 text-[#1E1E1E]" style={{ fontFamily: 'var(--font-cairo)' }}>تيك توك 🎵</div>
+                  <p className="text-xs font-bold text-gray-700 leading-normal" style={{ fontFamily: 'var(--font-almarai)' }}>
+                    لما تكتشف إن عقلك بيستهلك طاقة أكتر من أي عضو تاني في جسمك! 🧠⚡ هالي هالو! #مستر_نوبل
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -1271,72 +1286,83 @@ export default function Home() {
           style={{ backgroundColor: 'var(--blue)' }}
         >
           <div className="slide-inner" dir="rtl">
-            <div className="flex flex-col gap-4 text-right mb-12">
-              <motion.p 
-                className="label label-orange self-start"
-                custom={0.1}
-                initial="hidden"
-                animate={activeSlide === 16 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                استراتيجية النشر
-              </motion.p>
-              <motion.h2 
-                className="big-text font-black text-white"
-                custom={0.2}
-                initial="hidden"
-                animate={activeSlide === 16 ? "visible" : "hidden"}
-                variants={revealVariants}
-                style={{ textShadow: '4px 4px 0px var(--charcoal)' }}
-              >
-                دليل التشغيل والانتشار
-              </motion.h2>
-            </div>
+            <div className="split split-wide gap-8">
+              {/* Right column: Description */}
+              <div className="flex flex-col gap-4 text-right justify-center">
+                <motion.p 
+                  className="label label-orange self-start"
+                  custom={0.1}
+                  initial="hidden"
+                  animate={activeSlide === 16 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                >
+                  استراتيجية النشر
+                </motion.p>
+                <motion.h2 
+                  className="big-text font-black text-white"
+                  custom={0.2}
+                  initial="hidden"
+                  animate={activeSlide === 16 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ textShadow: '4px 4px 0px var(--charcoal)' }}
+                >
+                  دليل التشغيل والانتشار 🚀
+                </motion.h2>
+                <p className="body-text text-white/90 text-sm font-semibold leading-relaxed mt-2">
+                  كل خطوة في صناعة المحتوى لدينا هي عملية هندسية مدروسة وموجهة بالأرقام والنتائج لضمان أقصى انتشار وتفاعل ممكنين.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ direction: 'rtl' }}>
-              <motion.div 
-                className="neo-card text-right"
-                custom={0.3}
-                initial="hidden"
-                animate={activeSlide === 16 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>01. علم الصور المصغرة</h4>
-                <p className="text-gray-700 text-sm font-semibold">كل صورة مصغرة (Thumbnail) تُصنع لتكون مصيدة للنظر: تعبيرات وجه قوية، فجوات فضول غامضة، وألوان متناغمة عالية التباين. خاضعة لاختبارات مستمرة لضمان أعلى نسب نقر ودخول.</p>
-              </motion.div>
+              {/* Left column: 2x2 grid of cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ direction: 'rtl' }}>
+                <motion.div 
+                  className="neo-card text-right"
+                  custom={0.3}
+                  initial="hidden"
+                  animate={activeSlide === 16 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>01. علم الصور المصغرة</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">كل صورة مصغرة تُصنع لتكون مصيدة للنظر: تعبيرات وجه قوية، فجوات فضول غامضة، وألوان متناغمة عالية التباين لضمان أعلى نسب نقر.</p>
+                </motion.div>
 
-              <motion.div 
-                className="neo-card text-right"
-                custom={0.4}
-                initial="hidden"
-                animate={activeSlide === 16 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>02. ملائمة المنصات ديناميكياً</h4>
-                <p className="text-gray-700 text-sm font-semibold">نعيد صياغة وهندسة المحتوى بالكامل لكل منصة بدلاً من مجرد تغيير حجمه: فيديوهات طولية سريعة للتيك توك والريلز، سينمائية لليوتيوب، وبصرية متفاعلة للفيسبوك.</p>
-              </motion.div>
+                <motion.div 
+                  className="neo-card text-right"
+                  custom={0.4}
+                  initial="hidden"
+                  animate={activeSlide === 16 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>02. ملائمة المنصات</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">نعيد هندسة المحتوى بالكامل لكل منصة بدلاً من مجرد تغيير حجمه: فيديوهات طولية للتيك توك، سينمائية لليوتيوب، وبصرية للفيسبوك.</p>
+                </motion.div>
 
-              <motion.div 
-                className="neo-card text-right"
-                custom={0.5}
-                initial="hidden"
-                animate={activeSlide === 16 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>03. جدول نشر صارم ومستمر</h4>
-                <p className="text-gray-700 text-sm font-semibold">نسق نشر أسبوعي ثابت ومدروس: فيديوهان يوتيوب أساسيان، 5 مقاطع قصيرة (Shorts/Reels)، ستوريز يومية متفاعلة، ومواكبة ذكية للترندات الإقليمية والأحداث الكبرى.</p>
-              </motion.div>
+                <motion.div 
+                  className="neo-card text-right"
+                  custom={0.5}
+                  initial="hidden"
+                  animate={activeSlide === 16 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>03. جدول نشر صارم</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">نسق نشر ثابت ومدروس: فيديوهان يوتيوب أساسيان، 5 مقاطع قصيرة أسبوعياً، ستوريز يومية متفاعلة، ومواكبة ذكية للترندات الكبرى.</p>
+                </motion.div>
 
-              <motion.div 
-                className="neo-card text-right"
-                custom={0.6}
-                initial="hidden"
-                animate={activeSlide === 16 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>04. اتساق وتطابق الهوية</h4>
-                <p className="text-gray-700 text-sm font-semibold">كل قطعة محتوى تتبع بدقة متناهية النظام البصري لمستر نوبل: العلامة المائية للعين، التباين اللوني، الخطوط الموحدة، وبالطبع المقدمة الأيقونية "هالي هالو".</p>
-              </motion.div>
+                <motion.div 
+                  className="neo-card text-right"
+                  custom={0.6}
+                  initial="hidden"
+                  animate={activeSlide === 16 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ padding: '20px' }}
+                >
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>04. اتساق وتطابق الهوية</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">كل قطعة محتوى تتبع بدقة متناهية النظام البصري لمستر نوبل: العلامة المائية للعين، التباين اللوني، وبالطبع المقدمة الأيقونية "هالي هالو".</p>
+                </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -1349,99 +1375,109 @@ export default function Home() {
         >
           <div className="slide-inner" dir="rtl">
             <span className="bg-number">USER</span>
-            <div className="flex flex-col gap-6 text-right">
-              <motion.p 
-                className="label label-orange self-start"
-                custom={0.1}
-                initial="hidden"
-                animate={activeSlide === 17 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                الجمهور المستهدف
-              </motion.p>
-              <motion.h2 
-                className="big-text font-black"
-                custom={0.25}
-                initial="hidden"
-                animate={activeSlide === 17 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                من يتابع مستر نوبل؟
-              </motion.h2>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
-                <motion.div 
-                  className="neo-card text-center py-6 px-4"
-                  custom={0.3}
+            <div className="split split-wide gap-8">
+              {/* Right column: Header and Psychographics */}
+              <div className="flex flex-col gap-4 text-right justify-center">
+                <motion.p 
+                  className="label label-orange self-start"
+                  custom={0.1}
                   initial="hidden"
                   animate={activeSlide === 17 ? "visible" : "hidden"}
                   variants={revealVariants}
                 >
-                  <div className="text-3xl md:text-4xl font-black text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>١٦–٣٥</div>
-                  <div className="text-xs font-black text-gray-500 mt-2" style={{ fontFamily: 'var(--font-cairo)' }}>الفئة العمرية</div>
-                </motion.div>
-
-                <motion.div 
-                  className="neo-card text-center py-6 px-4"
-                  custom={0.35}
+                  الجمهور المستهدف
+                </motion.p>
+                <motion.h2 
+                  className="big-text font-black"
+                  custom={0.25}
                   initial="hidden"
                   animate={activeSlide === 17 ? "visible" : "hidden"}
                   variants={revealVariants}
                 >
-                  <div className="text-2xl md:text-3xl font-black text-[#00F0FF]" style={{ fontFamily: 'var(--font-cairo)' }}>عربي/إنجليزي</div>
-                  <div className="text-xs font-black text-gray-500 mt-2" style={{ fontFamily: 'var(--font-cairo)' }}>ثنائي اللغة (Bilingual)</div>
-                </motion.div>
-
+                  من يتابع مستر نوبل؟ 👥
+                </motion.h2>
+                
                 <motion.div 
-                  className="neo-card text-center py-6 px-4"
-                  custom={0.4}
-                  initial="hidden"
-                  animate={activeSlide === 17 ? "visible" : "hidden"}
-                  variants={revealVariants}
-                >
-                  <div className="text-3xl md:text-4xl font-black text-[#FF0D39]" style={{ fontFamily: 'var(--font-cairo)' }}>٢٤/٧</div>
-                  <div className="text-xs font-black text-gray-500 mt-2" style={{ fontFamily: 'var(--font-cairo)' }}>أبناء العصر الرقمي</div>
-                </motion.div>
-
-                <motion.div 
-                  className="neo-card text-center py-6 px-4"
-                  custom={0.45}
-                  initial="hidden"
-                  animate={activeSlide === 17 ? "visible" : "hidden"}
-                  variants={revealVariants}
-                >
-                  <div className="text-3xl md:text-4xl font-black text-[#FFC72C]">🌍</div>
-                  <div className="text-xs font-black text-gray-500 mt-2" style={{ fontFamily: 'var(--font-cairo)' }}>الشرق الأوسط والخليج العربي</div>
-                </motion.div>
-              </div>
-
-              <hr className="thin-rule my-4" />
-
-              <div className="split text-right" style={{ gap: '30px' }}>
-                <motion.div 
-                  className="neo-card"
+                  className="neo-card mt-2 text-right"
                   custom={0.5}
                   initial="hidden"
                   animate={activeSlide === 17 ? "visible" : "hidden"}
                   variants={revealVariants}
+                  style={{ padding: '20px' }}
                 >
-                  <h3 className="font-black text-lg mb-2 text-[#00F0FF]" style={{ fontFamily: 'var(--font-cairo)' }}>السمات النفسية والسلوكية للجمهور</h3>
-                  <p className="text-gray-700 text-sm font-semibold leading-relaxed">محبون للفضول والمعرفة، متفاعلون مع ثقافة الميمز والإنترنت، ويقدرون الواقعية والصدق التام. لا يتابعون قنوات جامدة، بل يلتفون حول صناع المحتوى الحقيقيين. يشاركون المحتوى الذي يجعلهم يبدون أذكياء أو يشعل نقاشاً مثيراً في محيطهم. يستهلكون المحتوى عبر أكثر من 3 منصات يومياً ولديهم نفور تام من الأسلوب التعليمي التقليدي الممل.</p>
+                  <h3 className="font-black text-lg mb-2 text-[#00F0FF]" style={{ fontFamily: 'var(--font-cairo)' }}>السمات السلوكية للجمهور</h3>
+                  <p className="text-gray-700 text-xs font-semibold leading-relaxed">
+                    محبون للفضول والمعرفة، متفاعلون مع ثقافة الميمز والإنترنت، ويقدرون الواقعية والصدق التام. لا يتابعون قنوات جامدة، بل يلتفون حول صناع المحتوى الحقيقيين. يشاركون المحتوى الذي يجعلهم يبدون أذكياء أو يشعل نقاشاً مثيراً. يستهلكون المحتوى عبر أكثر من 3 منصات يومياً ولديهم نفور تام من الأسلوب التعليمي التقليدي.
+                  </p>
                 </motion.div>
+              </div>
+
+              {/* Left column: Grid of demographic counters & platforms */}
+              <div className="flex flex-col gap-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <motion.div 
+                    className="neo-card text-center"
+                    custom={0.3}
+                    initial="hidden"
+                    animate={activeSlide === 17 ? "visible" : "hidden"}
+                    variants={revealVariants}
+                    style={{ padding: '16px 8px' }}
+                  >
+                    <div className="text-2xl font-black text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>١٦–٣٥</div>
+                    <div className="text-[10px] font-black text-gray-500 mt-1" style={{ fontFamily: 'var(--font-cairo)' }}>الفئة العمرية</div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="neo-card text-center"
+                    custom={0.35}
+                    initial="hidden"
+                    animate={activeSlide === 17 ? "visible" : "hidden"}
+                    variants={revealVariants}
+                    style={{ padding: '16px 8px' }}
+                  >
+                    <div className="text-lg font-black text-[#38BDF8]" style={{ fontFamily: 'var(--font-cairo)' }}>عربي/إنجليزي</div>
+                    <div className="text-[10px] font-black text-gray-500 mt-1" style={{ fontFamily: 'var(--font-cairo)' }}>ثنائي اللغة</div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="neo-card text-center"
+                    custom={0.4}
+                    initial="hidden"
+                    animate={activeSlide === 17 ? "visible" : "hidden"}
+                    variants={revealVariants}
+                    style={{ padding: '16px 8px' }}
+                  >
+                    <div className="text-2xl font-black text-[#FF0D39]" style={{ fontFamily: 'var(--font-cairo)' }}>٢٤/٧</div>
+                    <div className="text-[10px] font-black text-gray-500 mt-1" style={{ fontFamily: 'var(--font-cairo)' }}>أبناء العصر الرقمي</div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="neo-card text-center"
+                    custom={0.45}
+                    initial="hidden"
+                    animate={activeSlide === 17 ? "visible" : "hidden"}
+                    variants={revealVariants}
+                    style={{ padding: '16px 8px' }}
+                  >
+                    <div className="text-2xl font-black text-[#FFC72C]">🌍</div>
+                    <div className="text-[10px] font-black text-gray-500 mt-1" style={{ fontFamily: 'var(--font-cairo)' }}>الخليج والشرق الأوسط</div>
+                  </motion.div>
+                </div>
 
                 <motion.div 
-                  className="neo-card"
+                  className="neo-card text-right"
                   custom={0.55}
                   initial="hidden"
                   animate={activeSlide === 17 ? "visible" : "hidden"}
                   variants={revealVariants}
+                  style={{ padding: '20px' }}
                 >
-                  <h3 className="font-black text-lg mb-4 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>المنصات الرئيسية للنشر</h3>
+                  <h3 className="font-black text-sm mb-3 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>المنصات الرئيسية للنشر</h3>
                   <div className="flex flex-wrap gap-2 justify-end" style={{ flexDirection: 'row-reverse' }}>
-                    <span className="pill">▶️ يوتيوب</span>
-                    <span className="pill">🎵 تيك توك</span>
-                    <span className="pill">📸 إنستغرام</span>
-                    <span className="pill">📘 فيسبوك</span>
+                    <span className="pill" style={{ padding: '6px 14px', fontSize: '11px', margin: '2px' }}>▶️ يوتيوب</span>
+                    <span className="pill" style={{ padding: '6px 14px', fontSize: '11px', margin: '2px' }}>🎵 تيك توك</span>
+                    <span className="pill" style={{ padding: '6px 14px', fontSize: '11px', margin: '2px' }}>📸 إنستغرام</span>
+                    <span className="pill" style={{ padding: '6px 14px', fontSize: '11px', margin: '2px' }}>📘 فيسبوك</span>
                   </div>
                 </motion.div>
               </div>
@@ -1458,47 +1494,51 @@ export default function Home() {
         >
           <div className="slide-inner" dir="rtl">
             <span className="bg-number" style={{ color: 'white', opacity: 0.1 }}>GOAL</span>
-            <div className="flex flex-col gap-6 text-right">
-              <motion.p 
-                className="label label-pink self-start"
-                custom={0.1}
-                initial="hidden"
-                animate={activeSlide === 18 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                النمو وآفاق المستقبل
-              </motion.p>
-              <motion.h2 
-                className="big-text font-black text-white"
-                custom={0.2}
-                initial="hidden"
-                animate={activeSlide === 18 ? "visible" : "hidden"}
-                variants={revealVariants}
-                style={{ textShadow: '4px 4px 0px var(--charcoal)' }}
-              >
-                من صانع محتوى إلى علامة تجارية ثقافية
-              </motion.h2>
+            <div className="split split-wide gap-8">
+              {/* Right column: Description */}
+              <div className="flex flex-col gap-4 text-right justify-center">
+                <motion.p 
+                  className="label label-pink self-start"
+                  custom={0.1}
+                  initial="hidden"
+                  animate={activeSlide === 18 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                >
+                  النمو وآفاق المستقبل
+                </motion.p>
+                <motion.h2 
+                  className="big-text font-black text-white"
+                  custom={0.2}
+                  initial="hidden"
+                  animate={activeSlide === 18 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                  style={{ textShadow: '4px 4px 0px var(--charcoal)' }}
+                >
+                  من صانع محتوى إلى علامة تجارية ثقافية 🚀
+                </motion.h2>
+                <motion.p 
+                  className="body-text text-white opacity-90 text-sm leading-relaxed"
+                  custom={0.25}
+                  initial="hidden"
+                  animate={activeSlide === 18 ? "visible" : "hidden"}
+                  variants={revealVariants}
+                >
+                  مستر نوبل لا يجمع المتابعين فحسب — بل يؤسس لنظام بيئي رقمي وثقافي عابر للمنصات. تمتد خارطة طريقنا للمستقبل لما هو أبعد من مقاطع الفيديو، لتصنع مجتمعات متكاملة، توسعات جغرافية مبتكرة، وشراكات تجارية راقية ومؤثرة.
+                </motion.p>
+              </div>
 
-              <motion.p 
-                className="body-text text-white opacity-90 max-w-[680px]"
-                custom={0.25}
-                initial="hidden"
-                animate={activeSlide === 18 ? "visible" : "hidden"}
-                variants={revealVariants}
-              >
-                مستر نوبل لا يجمع المتابعين فحسب — بل يؤسس لنظام بيئي رقمي وثقافي عابر للمنصات. تمتد خارطة طريقنا للمستقبل لما هو أبعد من مقاطع الفيديو، لتصنع مجتمعات متكاملة، توسعات جغرافية مبتكرة، وشراكات تجارية راقية ومؤثرة.
-              </motion.p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+              {/* Left column: 2x2 grid of cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ direction: 'rtl' }}>
                 <motion.div 
                   className="neo-card text-right"
                   custom={0.3}
                   initial="hidden"
                   animate={activeSlide === 18 ? "visible" : "hidden"}
                   variants={revealVariants}
+                  style={{ padding: '20px' }}
                 >
-                  <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>🎬 التوسع الأفقي للمحتوى</h4>
-                  <p className="text-gray-700 text-sm font-semibold">تطوير أفلام وثائقية قصيرة عالية الإنتاج، إطلاق بودكاست حواري يبحث في ما وراء الحقائق، وصناعة مقاطع تعاونية (Crossovers) مع أكبر صناع المحتوى بالوطن العربي.</p>
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>🎬 التوسع الأفقي</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">تطوير أفلام وثائقية قصيرة، إطلاق بودكاست حواري يبحث في ما وراء الحقائق، وصناعة مقاطع تعاونية مع أكبر صناع المحتوى بالوطن العربي.</p>
                 </motion.div>
 
                 <motion.div 
@@ -1507,9 +1547,10 @@ export default function Home() {
                   initial="hidden"
                   animate={activeSlide === 18 ? "visible" : "hidden"}
                   variants={revealVariants}
+                  style={{ padding: '20px' }}
                 >
-                  <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>👥 المجتمع والمنصات التفاعلية</h4>
-                  <p className="text-gray-700 text-sm font-semibold">تأسيس مجتمعات حصرية فائقة النشاط (قنوات Discord وWhatsApp) وإطلاق ميزات انتساب متكاملة على يوتيوب لخدمة وتقدير المعجبين الخارقين.</p>
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>👥 المجتمع والمنصات</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">تأسيس مجتمعات حصرية فائقة النشاط (قنوات Discord وWhatsApp) وإطلاق ميزات انتساب متكاملة لتقدير المعجبين الخارقين.</p>
                 </motion.div>
 
                 <motion.div 
@@ -1518,9 +1559,10 @@ export default function Home() {
                   initial="hidden"
                   animate={activeSlide === 18 ? "visible" : "hidden"}
                   variants={revealVariants}
+                  style={{ padding: '20px' }}
                 >
-                  <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>🤝 الشراكات والتعاونات الفاخرة</h4>
-                  <p className="text-gray-700 text-sm font-semibold">عقد شراكات ذكية وغير مصطنعة مع علامات تجارية كبرى ومحلية تشارك مستر نوبل قيمه الجمالية البصرية وطاقته العالية المبنية على الفضول.</p>
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>🤝 الشراكات الفاخرة</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">عقد شراكات ذكية وغير مصطنعة مع علامات تجارية كبرى ومحلية تشارك مستر نوبل قيمه الجمالية البصرية وطاقته العالية المبنية على الفضول.</p>
                 </motion.div>
 
                 <motion.div 
@@ -1529,9 +1571,10 @@ export default function Home() {
                   initial="hidden"
                   animate={activeSlide === 18 ? "visible" : "hidden"}
                   variants={revealVariants}
+                  style={{ padding: '20px' }}
                 >
-                  <h4 className="font-black text-xl mb-2 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>🌍 التوسع الجغرافي الإقليمي</h4>
-                  <p className="text-gray-700 text-sm font-semibold">تصميم محتوى وحملات موجهة خصيصاً للمملكة العربية السعودية، الإمارات، مصر، ومنطقة الخليج العربي — لتقديم نفس جودة الفضول بنكهات محلية قريبة لقلوبهم.</p>
+                  <h4 className="font-black text-lg mb-1 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>🌍 التوسع الجغرافي</h4>
+                  <p className="text-gray-700 text-xs font-semibold leading-normal">تصميم محتوى وحملات موجهة للمملكة العربية السعودية، الإمارات، مصر، ومنطقة الخليج العربي لتقديم نفس جودة الفضول بنكهات محلية.</p>
                 </motion.div>
               </div>
             </div>
