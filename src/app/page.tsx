@@ -1153,7 +1153,7 @@ export default function Home() {
         >
           <div className="slide-inner" dir="rtl">
             <span className="bg-number">ROOM</span>
-            <div className="split split-wide gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.65fr_1fr] gap-8 items-center">
               {/* Right Side: Studio Image and Labels */}
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center w-full">
@@ -1170,17 +1170,17 @@ export default function Home() {
                 </div>
                 
                 {/* Neo-brutalist cartoonish frame wrapping real studio picture */}
-                <div className="studio-frame relative" style={{ height: '42vh' }}>
+                <div className="studio-frame relative" style={{ height: '52vh' }}>
                   <div className="w-full h-full absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/studio.PNG')" }} />
                   
                   {/* Interactive Annotations */}
                   <div className="absolute inset-0 z-20 pointer-events-auto">
-                    <span className="studio-label" style={{ top: '10%', right: '6%' }}>🎯 بورد التحقيقات</span>
-                    <span className="studio-label" style={{ top: '22%', left: '6%' }}>🏈 تيشيرت توم برادي</span>
-                    <span className="studio-label" style={{ bottom: '38%', right: '6%' }}>🛋️ الأريكة الحمراء</span>
-                    <span className="studio-label" style={{ top: '35%', right: '45%' }}>🛹 سكيت بورد ويلسون</span>
-                    <span className="studio-label" style={{ bottom: '25%', left: '10%' }}>📢 لوحة «أعلن هنا»</span>
-                    <span className="studio-label" style={{ bottom: '10%', right: '28%' }}>🎯 لوحة السهام</span>
+                    <span className="studio-label" style={{ top: '15%', right: '10%' }}>🎯 بورد التحقيقات</span>
+                    <span className="studio-label" style={{ top: '20%', left: '10%' }}>🏈 تيشيرت توم برادي</span>
+                    <span className="studio-label" style={{ bottom: '18%', left: '42%' }}>🛋️ الأريكة الحمراء</span>
+                    <span className="studio-label" style={{ top: '40%', left: '40%' }}>🛹 سكيت بورد ويلسون</span>
+                    <span className="studio-label" style={{ bottom: '22%', right: '8%' }}>📢 لوحة «أعلن هنا»</span>
+                    <span className="studio-label" style={{ top: '55%', left: '8%' }}>🎯 لوحة السهام</span>
                   </div>
                   
                   {/* Dark overlay just enough for annotations pop */}
