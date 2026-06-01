@@ -194,7 +194,7 @@ export default function Home() {
                   <img 
                     src="/images/logo.png" 
                     alt="Mr Nobel Logo" 
-                    className="w-[260px] h-[260px] md:w-[350px] md:h-[350px] object-contain rounded-2xl select-none pointer-events-none"
+                    className="w-[320px] h-[320px] md:w-[440px] md:h-[440px] object-contain rounded-2xl select-none pointer-events-none"
                     style={{
                       filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.2))'
                     }}
@@ -693,7 +693,7 @@ export default function Home() {
                   <img 
                     src="/images/logo.png" 
                     alt="Mr Nobel Logo" 
-                    className="w-[220px] h-[220px] md:w-[260px] md:h-[260px] object-contain rounded-2xl select-none pointer-events-none"
+                    className="w-[260px] h-[260px] md:w-[320px] md:h-[320px] object-contain rounded-2xl select-none pointer-events-none"
                     style={{
                       filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.15))'
                     }}
@@ -1628,7 +1628,7 @@ export default function Home() {
               <img 
                 src="/images/logo.png" 
                 alt="Mr Nobel Logo" 
-                className="w-[260px] h-[260px] md:w-[350px] md:h-[350px] object-contain rounded-2xl select-none pointer-events-none"
+                className="w-[320px] h-[320px] md:w-[440px] md:h-[440px] object-contain rounded-2xl select-none pointer-events-none"
                 style={{
                   filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.2))'
                 }}
