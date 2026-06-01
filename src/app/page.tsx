@@ -1176,8 +1176,8 @@ export default function Home() {
               <span className="text-gray-400 font-black text-xs hidden md:inline">★ تفاعل مع الملاحظات العائمة ★</span>
             </div>
 
-            {/* Giant Full-Width Studio Image Frame in Natural Aspect Ratio */}
-            <div className="studio-frame relative w-full overflow-hidden rounded-3xl border-4 border-charcoal bg-[#0A0A0A] shadow-[8px_8px_0px_rgba(30,30,30,0.85)]">
+            {/* Studio Image Frame (Capped at 70% width on desktop, responsive on mobile) */}
+            <div className="studio-frame relative w-full max-w-[780px] mx-auto overflow-hidden rounded-3xl border-4 border-charcoal bg-[#0A0A0A] shadow-[8px_8px_0px_rgba(30,30,30,0.85)]">
               <img 
                 src="/images/studio.PNG" 
                 alt="Mr Nobel Studio" 
@@ -1186,12 +1186,12 @@ export default function Home() {
               
               {/* Interactive Annotations */}
               <div className="absolute inset-0 z-20 pointer-events-auto">
-                <span className="studio-label" style={{ top: '22%', right: '15%' }}>🎯 بورد التحقيقات</span>
-                <span className="studio-label" style={{ top: '20%', left: '10%' }}>🏈 تيشيرت توم برادي</span>
-                <span className="studio-label" style={{ bottom: '15%', left: '38%' }}>🛋️ الأريكة الحمراء</span>
-                <span className="studio-label" style={{ top: '38%', left: '40%' }}>🛹 سكيت بورد ويلسون</span>
-                <span className="studio-label" style={{ bottom: '22%', right: '8%' }}>📢 لوحة «أعلن هنا»</span>
-                <span className="studio-label" style={{ top: '52%', left: '8%' }}>🎯 لوحة السهام</span>
+                <span className="studio-label" style={{ top: '15%', left: '22%' }}>🎯 بورد التحقيقات</span>
+                <span className="studio-label" style={{ top: '32%', left: '46%' }}>🏈 تيشيرت توم برادي</span>
+                <span className="studio-label" style={{ bottom: '18%', left: '38%' }}>🛋️ الأريكة الحمراء</span>
+                <span className="studio-label" style={{ top: '35%', left: '62%' }}>🛹 سكيت بورد ويلسون</span>
+                <span className="studio-label" style={{ top: '35%', right: '6%' }}>📢 لوحة «أعلن هنا»</span>
+                <span className="studio-label" style={{ top: '12%', left: '6%' }}>🎯 لوحة السهام</span>
               </div>
               
               {/* Subtle dark overlay to match the cartoon theme */}
