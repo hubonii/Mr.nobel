@@ -411,18 +411,18 @@ h1, h2, h3, h4, h5, h6 {
 .studio-label {
   position: absolute;
   background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--charcoal);
-  padding: 8px 20px;
+  padding: 4px 12px;
   border-radius: 100px;
   font-family: var(--font-cairo), sans-serif;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 900;
-  border: var(--border);
+  border: 2px solid var(--charcoal);
   white-space: nowrap;
   cursor: pointer;
-  box-shadow: 4px 4px 0px rgba(30, 30, 30, 0.85);
+  box-shadow: 2px 2px 0px rgba(30, 30, 30, 0.85);
   transition: all 0.2s var(--ease-cartoon);
   z-index: 30;
 }
@@ -430,13 +430,13 @@ h1, h2, h3, h4, h5, h6 {
 .studio-label::before {
   content: '★';
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 6px;
   color: var(--yellow);
 }
 
 .studio-label:hover {
-  transform: translate(-3px, -3px) scale(1.05);
-  box-shadow: 7px 7px 0px var(--charcoal);
+  transform: translate(-2px, -2px) scale(1.05);
+  box-shadow: 4px 4px 0px var(--charcoal);
   background: rgba(255, 199, 44, 0.9); /* Semi-transparent yellow on hover */
 }
 
@@ -560,9 +560,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 6px;
   }
   .studio-label {
-    font-size: 10px;
-    padding: 5px 10px;
-    box-shadow: 2px 2px 0px var(--charcoal);
+    font-size: 8px;
+    padding: 3px 8px;
+    border-width: 1.5px;
+    box-shadow: 1.5px 1.5px 0px rgba(30, 30, 30, 0.85);
   }
   .studio-frame {
     height: 28vh;
