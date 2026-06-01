@@ -124,13 +124,13 @@ export default function Home() {
       {/* Main Snap Slides Container */}
       <main className="relative z-10 w-full min-h-screen">
         
-        {/* ════════════ SLIDE 1 — CINEMATIC COVER ════════════ */}
+        {/* Slide 1 - Cinematic Cover */}
         <section 
           className="slide" 
           data-slide={0} 
           ref={el => { slidesRef.current[0] = el; }}
         >
-          {/* Whimsical Retro Doodles */}
+          {/* Retro doodles */}
           <RetroStar className="absolute top-[12%] left-[15%] text-[#FFC72C] w-12 h-12" />
           <RetroStar className="absolute bottom-[20%] right-[10%] text-[#FF8DA1] w-10 h-10" />
           <HappyFlower className="absolute bottom-[10%] left-[8%] text-[#38BDF8]" />
@@ -184,7 +184,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              {/* Raw Logo Image with No Background or Frame */}
+              {/* Logo image asset */}
               <div className="flex items-center justify-center relative">
                 <motion.div
                   initial={{ scale: 0.6, rotate: -20, opacity: 0 }}
@@ -205,7 +205,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 2 — THE HOOK ════════════ */}
+        {/* Slide 2 - The Hook */}
         <section 
           className="slide" 
           data-slide={1} 
@@ -247,7 +247,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 3 — WHO IS MR NOBEL ════════════ */}
+        {/* Slide 3 - Who is Mr Nobel */}
         <section 
           className="slide" 
           data-slide={2} 
@@ -292,7 +292,7 @@ export default function Home() {
                   variants={revealVariants}
                 />
                 
-                {/* Social media links in neo-brutalist buttons */}
+                {/* Social media links */}
                 <motion.div 
                   className="flex gap-4 items-center flex-wrap"
                   custom={0.5}
@@ -351,7 +351,7 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Walking TV mascot representer */}
+              {/* TV mascot display */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.7, rotate: 15 }}
@@ -365,7 +365,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 4 — THE VISION ════════════ */}
+        {/* Slide 4 - The Vision */}
         <section 
           className="slide" 
           data-slide={3} 
@@ -419,7 +419,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 5 — BRAND DNA ════════════ */}
+        {/* Slide 5 - Brand DNA */}
         <section 
           className="slide" 
           data-slide={4} 
@@ -489,7 +489,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 6 — THE PERSONA ════════════ */}
+        {/* Slide 6 - The Persona */}
         <section 
           className="slide" 
           data-slide={5} 
@@ -539,7 +539,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              {/* Whimsical Retro tv mascot again to balanced layout */}
+              {/* Balanced TV mascot display */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.7, rotate: -15 }}
@@ -553,7 +553,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 7 — CONTENT UNIVERSE ════════════ */}
+        {/* Slide 7 - Content Universe */}
         <section 
           className="slide" 
           data-slide={6} 
@@ -583,7 +583,7 @@ export default function Home() {
               </motion.h2>
             </div>
 
-            {/* 5-column grid for desktop, responsive grid for tablets/mobiles */}
+            {/* Columns layout for desktop and mobile viewports */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" style={{ direction: 'rtl' }}>
               
               {/* Card 1 */}
@@ -624,7 +624,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 8 — TOP TIERS 🏆 ════════════ */}
+        {/* Slide 8 - Top Tiers */}
         <section 
           className="slide" 
           data-slide={7} 
@@ -683,7 +683,7 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Raw Logo Image with No Background or Frame */}
+              {/* Logo image asset */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.6, rotate: -20, opacity: 0 }}
@@ -704,7 +704,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 9 — FACTS 🧠 ════════════ */}
+        {/* Slide 9 - Facts */}
         <section 
           className="slide" 
           data-slide={8} 
@@ -714,7 +714,7 @@ export default function Home() {
           <div className="slide-inner" dir="rtl">
             <span className="bg-number" style={{ color: 'white', opacity: 0.15 }}>02</span>
             <div className="split">
-              {/* Custom Walk Brain Mascot */}
+              {/* Brain mascot display */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.6, rotate: 20 }}
@@ -780,7 +780,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 10 — STREET Q&A 🎤 ════════════ */}
+        {/* Slide 10 - Street Q&A */}
         <section 
           className="slide" 
           data-slide={9} 
@@ -828,7 +828,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              {/* TV reporter mascot */}
+              {/* TV mascot display */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.6, rotate: -20 }}
@@ -842,7 +842,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 11 — TIPS & TRICKS 💡 ════════════ */}
+        {/* Slide 11 - Tips & Tricks */}
         <section 
           className="slide" 
           data-slide={10} 
@@ -852,7 +852,7 @@ export default function Home() {
           <div className="slide-inner" dir="rtl">
             <span className="bg-number" style={{ color: 'white', opacity: 0.2 }}>04</span>
             <div className="split">
-              {/* Smiling Edison Bulb Mascot */}
+              {/* Bulb mascot display */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.6, rotate: 20 }}
@@ -906,7 +906,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 12 — STORYTELLING 📖 ════════════ */}
+        {/* Slide 12 - Storytelling */}
         <section 
           className="slide" 
           data-slide={11} 
@@ -954,7 +954,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              {/* Happy Dancing Fire Mascot */}
+              {/* Flame mascot display */}
               <div className="flex items-center justify-center">
                 <motion.div
                   initial={{ scale: 0.6, rotate: -15 }}
@@ -968,7 +968,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 13 — HALI HALLO هالي هالو ════════════ */}
+        {/* Slide 13 - Catchphrase Hali Hallo */}
         <section 
           className="slide" 
           data-slide={12} 
@@ -989,8 +989,7 @@ export default function Home() {
               الكلمة الافتتاحية
             </motion.p>
             
-            {/* Bounce character animation */}
-            {/* Bounce word animation */}
+            {/* Word slide transitions */}
             <div className="flex justify-center gap-8 my-6 select-none" dir="rtl">
               {['هالي', 'هالو!'].map((word, index) => (
                 <motion.span
@@ -1048,7 +1047,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 14 — VISUAL IDENTITY ════════════ */}
+        {/* Slide 14 - Visual Identity */}
         <section 
           className="slide" 
           data-slide={13} 
@@ -1094,7 +1093,7 @@ export default function Home() {
                   variants={revealVariants}
                 />
                 
-                {/* Custom Brand Colors Swatches */}
+                {/* Color palette swatches */}
                 <motion.div 
                   className="flex flex-col gap-2"
                   custom={0.5}
@@ -1114,7 +1113,7 @@ export default function Home() {
                 </motion.div>
               </div>
 
-              {/* Brand Logo2 with Premium Cartoon Frame */}
+              {/* Logo visual asset */}
               <div className="flex items-center justify-center relative">
                 <motion.div
                   initial={{ scale: 0.7, rotate: 15 }}
@@ -1145,7 +1144,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 15 — THE STUDIO ════════════ */}
+        {/* Slide 15 - The Studio */}
         <section 
           className="slide" 
           data-slide={14} 
@@ -1169,7 +1168,7 @@ export default function Home() {
                   <span className="text-gray-400 font-black text-xs hidden md:inline">★ تفاعل مع الملاحظات العائمة ★</span>
                 </div>
                 
-                {/* Neo-brutalist cartoonish frame wrapping real studio picture in natural aspect ratio */}
+                {/* Frame container wrapping studio image in aspect ratio */}
                 <div className="studio-frame relative w-full overflow-hidden rounded-3xl border-4 border-charcoal bg-[#0A0A0A] shadow-[8px_8px_0px_rgba(30,30,30,0.85)]">
                   <img 
                     src="/images/studio.PNG" 
@@ -1177,7 +1176,7 @@ export default function Home() {
                     className="w-full h-auto block select-none pointer-events-none"
                   />
                   
-                  {/* Interactive Annotations */}
+                  {/* Interactive hotspot annotations */}
                   <div className="absolute inset-0 z-20 pointer-events-auto">
                     <span className="studio-label" style={{ top: '22%', left: '15%' }}>🎯 بورد التحقيقات</span>
                     <span className="studio-label" style={{ top: '24%', left: '44%' }}>🏈 تيشيرت توم برادي</span>
@@ -1187,7 +1186,7 @@ export default function Home() {
                     <span className="studio-label" style={{ top: '20%', left: '5%' }}>🎯 لوحة السهام</span>
                   </div>
                   
-                  {/* Subtle dark overlay to match the cartoon theme */}
+                  {/* Overlay aesthetic details */}
                   <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
                 </div>
               </div>
@@ -1211,7 +1210,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 16 — BRAND VOICE ════════════ */}
+        {/* Slide 16 - Brand Voice */}
         <section 
           className="slide" 
           data-slide={15} 
@@ -1312,7 +1311,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 17 — CONTENT STRATEGY ════════════ */}
+        {/* Slide 17 - Content Strategy */}
         <section 
           className="slide" 
           data-slide={16} 
@@ -1401,7 +1400,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 18 — TARGET AUDIENCE ════════════ */}
+        {/* Slide 18 - Target Audience */}
         <section 
           className="slide" 
           data-slide={17} 
@@ -1519,7 +1518,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 19 — GROWTH & FUTURE ════════════ */}
+        {/* Slide 19 - Growth and Future */}
         <section 
           className="slide" 
           data-slide={18} 
@@ -1615,7 +1614,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ════════════ SLIDE 20 — CLOSING ════════════ */}
+        {/* Slide 20 - Closing Cover */}
         <section 
           className="slide" 
           data-slide={19} 
@@ -1673,7 +1672,7 @@ export default function Home() {
               variants={revealVariants}
             />
 
-            {/* Platform handles click */}
+            {/* Platform navigation anchors */}
             <motion.div 
               className="flex gap-4 justify-center items-center mt-2 flex-wrap"
               custom={0.65}

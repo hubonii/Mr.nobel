@@ -30,7 +30,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
   };
 
   switch (pose) {
-    // ════════════ 1. LOGO BADGE (Cartoon Network styled logo wrapper) ════════════
+    // Pose 1: Logo badge wrapper
     case 'logo-badge':
       return (
         <div 
@@ -82,7 +82,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
         </div>
       );
 
-    // ════════════ 2. THE HAPPY BRAIN MASCOT (Facts) ════════════
+    // Pose 2: Brain mascot for facts format
     case 'brain-facts':
       return (
         <motion.div 
@@ -98,9 +98,9 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               <path d="M65 110 Q55 125 60 135" />
               {/* Right leg */}
               <path d="M95 110 Q105 125 100 135" />
-              {/* Left shoe (yellow boot) */}
+              {/* Left boot */}
               <path d="M48 135 C48 130, 62 130, 62 138 Z" fill="#FFC72C" stroke="#1E1E1E" strokeWidth="4" />
-              {/* Right shoe (yellow boot) */}
+              {/* Right boot */}
               <path d="M98 135 C98 130, 112 130, 112 138 Z" fill="#FFC72C" stroke="#1E1E1E" strokeWidth="4" />
             </g>
 
@@ -118,7 +118,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               <circle cx="80" cy="85" r="22" />
             </g>
 
-            {/* Smart Glasses */}
+            {/* Eyeglasses */}
             <g stroke="#1E1E1E" strokeWidth="4" fill="#38BDF8">
               {/* Left lens */}
               <circle cx="62" cy="68" r="14" />
@@ -131,7 +131,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               <path d="M112 68 Q120 65 122 72" fill="none" />
             </g>
 
-            {/* Smiley face (below glasses) */}
+            {/* Smiley mouth and cheeks */}
             <g stroke="#1E1E1E" strokeWidth="3" fill="none" strokeLinecap="round">
               <path d="M72 88 Q80 96 88 88" />
               {/* Cheeks */}
@@ -139,11 +139,11 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               <path d="M92 88 C92 86, 96 86, 96 88" stroke="#FF6B00" strokeWidth="2" />
             </g>
 
-            {/* Magnifying Glass (held by rubber hose arm) */}
+            {/* Magnifying glass and arms */}
             <g stroke="#1E1E1E" strokeWidth="4" fill="none" strokeLinecap="round">
               {/* Left Arm holding magnifier */}
               <path d="M42 85 Q22 90 28 105" />
-              {/* Right Arm waving */}
+              {/* Right waving arm */}
               <path d="M118 85 Q135 75 142 88" />
               
               {/* Magnifier handle */}
@@ -155,7 +155,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
         </motion.div>
       );
 
-    // ════════════ 3. RETRO TV INTERVIEWER MASCOT (Street Q&A) ════════════
+    // Pose 3: Retro TV interviewer mascot for street Q&A format
     case 'tv-street':
       return (
         <motion.div 
@@ -175,12 +175,12 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
             <g stroke="#1E1E1E" strokeWidth="5" fill="none" strokeLinecap="round">
               <path d="M60 110 L60 135" />
               <path d="M100 110 L100 135" />
-              {/* Boots (Red) */}
+              {/* Red boots */}
               <path d="M48 135 C48 128, 65 128, 65 140 Z" fill="#FF0D39" stroke="#1E1E1E" strokeWidth="4" />
               <path d="M88 135 C88 128, 105 128, 105 140 Z" fill="#FF0D39" stroke="#1E1E1E" strokeWidth="4" />
             </g>
 
-            {/* TV Main Cabinet Box */}
+            {/* TV cabinet shell */}
             <rect 
               x="35" 
               y="40" 
@@ -209,9 +209,9 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
             <circle cx="112" cy="70" r="4" fill="#1E1E1E" />
             <line x1="108" y1="85" x2="116" y2="85" stroke="#1E1E1E" strokeWidth="3" />
 
-            {/* Happy Screen Face */}
+            {/* Face expressions on screen */}
             <g stroke="#1E1E1E" strokeWidth="3" fill="none" strokeLinecap="round">
-              {/* Happy Wink Eyes */}
+              {/* Wink eyes animation */}
               <path d="M52 68 Q58 64 60 70" strokeWidth="4" />
               <path d="M76 68 Q82 64 84 70" strokeWidth="4" />
               {/* Smile */}
@@ -226,14 +226,14 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               <path d="M125 75 Q145 80 135 100" />
               {/* Mic handle */}
               <path d="M135 100 L142 118" stroke="#1E1E1E" strokeWidth="6" />
-              {/* Mic foam mesh (Red) */}
+              {/* Red microphone foam cover */}
               <circle cx="132" cy="98" r="8" fill="#FF0D39" stroke="#1E1E1E" strokeWidth="3" />
             </g>
           </svg>
         </motion.div>
       );
 
-    // ════════════ 4. THE HAPPY EDISON LIGHTBULB (Tips & Tricks) ════════════
+    // Pose 4: Lightbulb mascot for tips and tricks format
     case 'bulb-tips':
       return (
         <motion.div 
@@ -256,7 +256,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
             <g stroke="#1E1E1E" strokeWidth="5" fill="none" strokeLinecap="round">
               <path d="M70 120 Q60 135 65 142" />
               <path d="M90 120 Q100 135 95 142" />
-              {/* Shoes (Cyan) */}
+              {/* Cyan shoes */}
               <path d="M52 142 C52 136, 68 136, 68 145 Z" fill="#38BDF8" stroke="#1E1E1E" strokeWidth="4" />
               <path d="M88 142 C88 136, 104 136, 104 145 Z" fill="#38BDF8" stroke="#1E1E1E" strokeWidth="4" />
             </g>
@@ -279,12 +279,12 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               strokeWidth="5" 
             />
 
-            {/* Inside filament (smiley shape!) */}
+            {/* Internal filament details */}
             <path d="M68 62 Q80 50 92 62" fill="none" stroke="#FF6B00" strokeWidth="4" strokeLinecap="round" />
             <line x1="68" y1="62" x2="68" y2="82" stroke="#1E1E1E" strokeWidth="3" />
             <line x1="92" y1="62" x2="92" y2="82" stroke="#1E1E1E" strokeWidth="3" />
 
-            {/* Cute Face */}
+            {/* Face facial features */}
             <g stroke="#1E1E1E" strokeWidth="3" fill="none" strokeLinecap="round">
               <circle cx="68" cy="74" r="3.5" fill="#1E1E1E" />
               <circle cx="92" cy="74" r="3.5" fill="#1E1E1E" />
@@ -293,16 +293,16 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
 
             {/* Happy Waving Arms */}
             <g stroke="#1E1E1E" strokeWidth="5" fill="none" strokeLinecap="round">
-              {/* Left hand in air */}
+              {/* Left arm raised */}
               <path d="M46 75 Q28 65 30 48" />
-              {/* Right hand pointing to head */}
+              {/* Right arm pointing */}
               <path d="M114 75 Q132 65 130 48" />
             </g>
           </svg>
         </motion.div>
       );
 
-    // ════════════ 5. HAPPY DANCING FLAME MASCOT (Storytelling) ════════════
+    // Pose 5: Campfire flame mascot for storytelling format
     case 'campfire-story':
       return (
         <motion.div 
@@ -326,7 +326,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               <line x1="115" y1="130" x2="45" y2="115" stroke="#78350F" />
             </g>
 
-            {/* Outer Flame (Orange) */}
+            {/* Outer orange flame shape */}
             <path 
               d="M80 20 
                  Q95 45 110 65 
@@ -340,7 +340,7 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               strokeLinejoin="round"
             />
 
-            {/* Inner Flame (Yellow) */}
+            {/* Inner yellow flame shape */}
             <path 
               d="M80 45 
                  Q90 62 100 78 
@@ -354,16 +354,16 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
               strokeLinejoin="round"
             />
 
-            {/* Core Fire Face */}
+            {/* Inner face facial features */}
             <g stroke="#1E1E1E" strokeWidth="3" fill="none" strokeLinecap="round">
-              {/* Happy closed eyes ^ ^ */}
+              {/* Closed eye expressions */}
               <path d="M68 80 L74 74 L80 80" strokeWidth="4" />
               <path d="M88 80 L94 74 L100 80" strokeWidth="4" />
-              {/* Singing open mouth */}
+              {/* Singing mouth expression */}
               <circle cx="84" cy="94" r="6" fill="#1E1E1E" />
             </g>
 
-            {/* Little floating sparks (Red/Yellow circles) */}
+            {/* Circular spark elements */}
             <circle cx="50" cy="35" r="4" fill="#FF0D39" stroke="#1E1E1E" strokeWidth="1.5" />
             <circle cx="115" cy="40" r="5" fill="#FFC72C" stroke="#1E1E1E" strokeWidth="1.5" />
             <circle cx="85" cy="10" r="3" fill="#FF6B00" stroke="#1E1E1E" strokeWidth="1.5" />

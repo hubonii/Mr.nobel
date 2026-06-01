@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-// 🌟 Retro Sparkle Star Doodle
+// Star decoration component
 export function RetroStar({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg 
@@ -24,7 +24,7 @@ export function RetroStar({ className = '', style = {} }: { className?: string; 
   );
 }
 
-// ✿ Happy Flower Doodle
+// Flower decoration component
 export function HappyFlower({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg 
@@ -34,7 +34,7 @@ export function HappyFlower({ className = '', style = {} }: { className?: string
       width="80" 
       height="80"
     >
-      {/* Flower Petals */}
+      {/* Flower petals */}
       <g stroke="#1E1E1E" strokeWidth="4" fill="#FF8DA1">
         <circle cx="50" cy="20" r="18" />
         <circle cx="80" cy="50" r="18" />
@@ -45,21 +45,21 @@ export function HappyFlower({ className = '', style = {} }: { className?: string
         <circle cx="72" cy="72" r="18" fill="#FFC72C" />
         <circle cx="28" cy="72" r="18" fill="#FFC72C" />
       </g>
-      {/* Center Core */}
+      {/* Core element */}
       <circle cx="50" cy="50" r="22" fill="#FDFBF7" stroke="#1E1E1E" strokeWidth="4" />
-      {/* Smiley Face */}
+      {/* Face elements */}
       <g stroke="#1E1E1E" strokeWidth="3" fill="none" strokeLinecap="round">
         {/* Eyes */}
         <circle cx="43" cy="45" r="3" fill="#1E1E1E" />
         <circle cx="57" cy="45" r="3" fill="#1E1E1E" />
-        {/* Smile */}
+        {/* Mouth */}
         <path d="M42 55 Q50 62 58 55" />
       </g>
     </svg>
   );
 }
 
-// 💬 Neo-Brutalist Speech Bubble Component
+// Speech bubble component
 export function SpeechBubble({ 
   children, 
   arrowPos = 'right', 
@@ -84,7 +84,7 @@ export function SpeechBubble({
       >
         {children}
       </div>
-      {/* Bubble Arrow */}
+      {/* Arrow element */}
       {arrowPos === 'right' && (
         <div 
           className="absolute w-6 h-6 rotate-45"
@@ -131,7 +131,7 @@ export function SpeechBubble({
   );
 }
 
-// ☇ Retro Lightning Accent Doodle
+// Lightning decoration component
 export function CartoonLightning({ className = '', style = {} }: { className?: string; style?: React.CSSProperties }) {
   return (
     <svg 
