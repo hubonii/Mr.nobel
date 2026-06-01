@@ -414,15 +414,15 @@ h1, h2, h3, h4, h5, h6 {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   color: var(--charcoal);
-  padding: 4px 12px;
+  padding: 2.5px 8px;
   border-radius: 100px;
   font-family: var(--font-cairo), sans-serif;
-  font-size: 11px;
+  font-size: 7.5px;
   font-weight: 900;
-  border: 2px solid var(--charcoal);
+  border: 1.5px solid var(--charcoal);
   white-space: nowrap;
   cursor: pointer;
-  box-shadow: 2px 2px 0px rgba(30, 30, 30, 0.85);
+  box-shadow: 1.5px 1.5px 0px rgba(30, 30, 30, 0.85);
   transition: all 0.2s var(--ease-cartoon);
   z-index: 30;
 }
@@ -430,7 +430,7 @@ h1, h2, h3, h4, h5, h6 {
 .studio-label::before {
   content: '★';
   display: inline-block;
-  margin-left: 6px;
+  margin-left: 4px;
   color: var(--yellow);
 }
 
@@ -557,10 +557,10 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 6px;
   }
   .studio-label {
-    font-size: 8px;
-    padding: 3px 8px;
-    border-width: 1.5px;
-    box-shadow: 1.5px 1.5px 0px rgba(30, 30, 30, 0.85);
+    font-size: 5.5px;
+    padding: 1.5px 5px;
+    border-width: 1px;
+    box-shadow: 1px 1px 0px rgba(30, 30, 30, 0.85);
   }
   .neo-card {
     padding: 20px 16px;

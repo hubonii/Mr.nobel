@@ -1152,7 +1152,7 @@ export default function Home() {
         >
           <div className="slide-inner" dir="rtl">
             <span className="bg-number">ROOM</span>
-            <div className="grid grid-cols-1 lg:grid-cols-[1.55fr_1fr] gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.75fr_1fr] gap-8 items-center">
               {/* Right Side: Studio Image and Labels */}
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center w-full">
