@@ -1151,59 +1151,63 @@ export default function Home() {
           data-slide={14} 
           ref={el => { slidesRef.current[14] = el; }}
         >
-          <div className="slide-inner" dir="rtl">
+          <div className="slide-inner flex flex-col gap-5" dir="rtl">
             <span className="bg-number">ROOM</span>
-            <div className="grid grid-cols-1 lg:grid-cols-[1.65fr_1fr] gap-8 items-center">
-              {/* Right Side: Studio Image and Labels */}
-              <div className="flex flex-col gap-4">
-                <div className="flex justify-between items-center w-full">
-                  <motion.p 
-                    className="label label-orange"
-                    custom={0.1}
-                    initial="hidden"
-                    animate={activeSlide === 14 ? "visible" : "hidden"}
-                    variants={revealVariants}
-                  >
-                    الاستوديو الفعلي
-                  </motion.p>
-                  <span className="text-gray-400 font-black text-xs hidden md:inline">★ تفاعل مع الملاحظات العائمة ★</span>
-                </div>
-                
-                {/* Neo-brutalist cartoonish frame wrapping real studio picture */}
-                <div className="studio-frame relative" style={{ height: '52vh' }}>
-                  <div className="w-full h-full absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/studio.PNG')" }} />
-                  
-                  {/* Interactive Annotations */}
-                  <div className="absolute inset-0 z-20 pointer-events-auto">
-                    <span className="studio-label" style={{ top: '15%', right: '10%' }}>🎯 بورد التحقيقات</span>
-                    <span className="studio-label" style={{ top: '20%', left: '10%' }}>🏈 تيشيرت توم برادي</span>
-                    <span className="studio-label" style={{ bottom: '18%', left: '42%' }}>🛋️ الأريكة الحمراء</span>
-                    <span className="studio-label" style={{ top: '40%', left: '40%' }}>🛹 سكيت بورد ويلسون</span>
-                    <span className="studio-label" style={{ bottom: '22%', right: '8%' }}>📢 لوحة «أعلن هنا»</span>
-                    <span className="studio-label" style={{ top: '55%', left: '8%' }}>🎯 لوحة السهام</span>
-                  </div>
-                  
-                  {/* Dark overlay just enough for annotations pop */}
-                  <div className="absolute inset-0 bg-black/15 z-10 pointer-events-none" />
-                </div>
-              </div>
-
-              {/* Left Side: Description */}
-              <div className="flex flex-col justify-center">
-                <motion.div 
-                  className="neo-card text-right"
-                  custom={0.3}
+            
+            {/* Header row */}
+            <div className="flex justify-between items-center w-full">
+              <div className="flex gap-4 items-center">
+                <motion.p 
+                  className="label label-orange"
+                  custom={0.1}
                   initial="hidden"
                   animate={activeSlide === 14 ? "visible" : "hidden"}
                   variants={revealVariants}
                 >
-                  <h3 className="font-black text-2xl mb-4 text-[#FF6B00]" style={{ fontFamily: 'var(--font-cairo)' }}>حيث يعيش الفضول 🛋️</h3>
-                  <p className="body-text text-sm font-semibold max-w-none leading-relaxed">
-                    أكثر من مجرد موقع تصوير — إنه بطل حقيقي وشخصية قائمة بذاتها في كل حلقة. كل غرض هنا يروي حكاية خاصة: بورد التحريات المعقدة المربوطة بالخيوط الحمراء، التيشيرتات الكلاسيكية، والأريكة المخملية الحمراء التي شهدت مئات الحلقات المشوقة. الاستوديو هو بصمة بصرية تجعل المشاهد يتعرف على محتوى مستر نوبل في أول ثانية.
-                  </p>
-                </motion.div>
+                  الاستوديو الفعلي
+                </motion.p>
+                <motion.h3 
+                  className="font-black text-2xl text-[#FF6B00]" 
+                  style={{ fontFamily: 'var(--font-cairo)' }}
+                >
+                  حيث يعيش الفضول 🛋️
+                </motion.h3>
               </div>
+              <span className="text-gray-400 font-black text-xs hidden md:inline">★ تفاعل مع الملاحظات العائمة ★</span>
             </div>
+
+            {/* Giant Full-Width Studio Image Frame in Natural Aspect Ratio */}
+            <div className="studio-frame relative w-full overflow-hidden rounded-3xl border-4 border-charcoal bg-[#0A0A0A] shadow-[8px_8px_0px_rgba(30,30,30,0.85)]">
+              <img 
+                src="/images/studio.PNG" 
+                alt="Mr Nobel Studio" 
+                className="w-full h-auto block select-none pointer-events-none"
+              />
+              
+              {/* Interactive Annotations */}
+              <div className="absolute inset-0 z-20 pointer-events-auto">
+                <span className="studio-label" style={{ top: '22%', right: '15%' }}>🎯 بورد التحقيقات</span>
+                <span className="studio-label" style={{ top: '20%', left: '10%' }}>🏈 تيشيرت توم برادي</span>
+                <span className="studio-label" style={{ bottom: '15%', left: '38%' }}>🛋️ الأريكة الحمراء</span>
+                <span className="studio-label" style={{ top: '38%', left: '40%' }}>🛹 سكيت بورد ويلسون</span>
+                <span className="studio-label" style={{ bottom: '22%', right: '8%' }}>📢 لوحة «أعلن هنا»</span>
+                <span className="studio-label" style={{ top: '52%', left: '8%' }}>🎯 لوحة السهام</span>
+              </div>
+              
+              {/* Subtle dark overlay to match the cartoon theme */}
+              <div className="absolute inset-0 bg-black/10 z-10 pointer-events-none" />
+            </div>
+
+            {/* Description Text Capsule */}
+            <motion.p 
+              className="body-text text-sm font-semibold max-w-none text-right opacity-90 leading-relaxed bg-white/40 backdrop-blur-md p-4 rounded-xl border-2 border-charcoal/10"
+              custom={0.3}
+              initial="hidden"
+              animate={activeSlide === 14 ? "visible" : "hidden"}
+              variants={revealVariants}
+            >
+              أكثر من مجرد موقع تصوير — إنه بطل حقيقي وشخصية قائمة بذاتها في كل حلقة. كل غرض هنا يروي حكاية خاصة: بورد التحريات المعقدة المربوطة بالخيوط الحمراء، التيشيرتات الكلاسيكية، والأريكة المخملية الحمراء التي شهدت مئات الحلقات المشوقة. الاستوديو هو بصمة بصرية تجعل المشاهد يتعرف على محتوى مستر نوبل في أول ثانية.
+            </motion.p>
           </div>
         </section>
 
