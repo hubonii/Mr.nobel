@@ -50,15 +50,61 @@ export default function Mascot({ pose, className = '', style = {} }: MascotProps
             {/* Inner Spiral Pattern */}
             <div className="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.45)_10%,transparent_11%)] bg-[length:14px_14px]" />
             
-            {/* The Generated Premium Cartoon Network Logo Image (Transparent Background) */}
-            <img 
-              src="/images/logo-cartoon.png" 
-              alt="Mr Nobel Logo" 
-              className="relative w-[130px] h-[130px] rounded-full object-cover scale-[1.08]"
-              style={{ 
-                filter: 'drop-shadow(3px 3px 0px rgba(30,30,30,0.85))',
-              }}
-            />
+            {/* 100% Accurate Custom Vector SVG Eye Logo (Cartoon Network Style, Transparent Background) */}
+            <svg 
+              viewBox="0 0 200 200" 
+              className="relative w-[135px] h-[135px] select-none"
+              style={{ filter: 'drop-shadow(3.5px 3.5px 0px rgba(30,30,30,0.85))' }}
+            >
+              <defs>
+                <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <g stroke="#1E1E1E" strokeWidth="6.5" strokeLinecap="round" strokeLinejoin="round">
+                
+                {/* 1. White Upper Eyelid / Eyebrow (Crescent Sweep) */}
+                <path 
+                  d="M 30,130 Q 90,50 165,80 Q 90,68 30,130 Z" 
+                  fill="#FFFFFF" 
+                />
+
+                {/* 2. White Lower Eye Outline (Crescent Arc) */}
+                <path 
+                  d="M 66,114 Q 105,148 152,98 Q 105,136 66,114 Z" 
+                  fill="#FFFFFF" 
+                />
+
+                {/* 3. Orange Crescent Iris (Smile Arc) */}
+                <path 
+                  d="M 80,112 Q 105,134 132,102 Q 105,124 80,112 Z" 
+                  fill="#FF6B00" 
+                  strokeWidth="5.5"
+                />
+
+                {/* 4. White Highlight Dot (Perfect circle with thick outline) */}
+                <circle 
+                  cx="126" 
+                  cy="92" 
+                  r="6" 
+                  fill="#FFFFFF" 
+                  strokeWidth="4.5"
+                />
+
+                {/* 5. Glowing Cyan Lightning Bolt emerging from top-right */}
+                <path 
+                  d="M 135,60 L 158,24 L 142,52 L 158,52 L 132,86 L 143,60 Z" 
+                  fill="#00F0FF" 
+                  filter="url(#cyan-glow)"
+                />
+
+              </g>
+            </svg>
           </div>
           
           {/* Floating Stars around it */}
