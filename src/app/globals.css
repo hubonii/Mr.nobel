@@ -502,9 +502,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 3px 3px 0px var(--charcoal);
 }
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE LAYOUTS
-   ═══════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .slide {
     padding: 60px 6vw;
@@ -525,21 +522,66 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 768px) {
+  #nav-dots {
+    display: none !important;
+  }
+}
+
 @media (max-width: 640px) {
+  .slide {
+    padding: 40px 4vw;
+  }
   .hero-text {
-    font-size: clamp(30px, 7.5vw, 48px);
+    font-size: clamp(30px, 7.5vw, 44px);
     -webkit-text-stroke: 2px var(--charcoal);
     text-shadow: 3px 3px 0px var(--charcoal);
   }
   .big-text {
-    font-size: clamp(24px, 5.5vw, 36px);
+    font-size: clamp(22px, 5.5vw, 32px);
+  }
+  .body-text {
+    font-size: 14px;
+    line-height: 1.6;
   }
   .swatch {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
+  }
+  .swatch-box {
+    padding: 8px;
+    border-radius: 12px;
+  }
+  .swatch-label {
+    font-size: 10px;
+    margin-top: 6px;
   }
   .studio-label {
-    font-size: 11px;
-    padding: 6px 14px;
+    font-size: 10px;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 0px var(--charcoal);
+  }
+  .studio-frame {
+    height: 28vh;
+  }
+  .neo-card {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+  .format-card {
+    padding: 16px 14px;
+    min-width: auto;
+    max-width: none;
+  }
+  .format-card h4 {
+    font-size: 16px;
+  }
+  .format-card p {
+    font-size: 12px;
+  }
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
   }
 }

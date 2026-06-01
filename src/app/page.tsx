@@ -194,7 +194,7 @@ export default function Home() {
                   <img 
                     src="/images/logo.png" 
                     alt="Mr Nobel Logo" 
-                    className="w-[320px] h-[320px] md:w-[440px] md:h-[440px] object-contain rounded-2xl select-none pointer-events-none"
+                    className="w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] md:w-[440px] md:h-[440px] object-contain rounded-2xl select-none pointer-events-none"
                     style={{
                       filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.2))'
                     }}
@@ -693,7 +693,7 @@ export default function Home() {
                   <img 
                     src="/images/logo.png" 
                     alt="Mr Nobel Logo" 
-                    className="w-[260px] h-[260px] md:w-[320px] md:h-[320px] object-contain rounded-2xl select-none pointer-events-none"
+                    className="w-[180px] h-[180px] sm:w-[240px] sm:h-[240px] md:w-[320px] md:h-[320px] object-contain rounded-2xl select-none pointer-events-none"
                     style={{
                       filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.15))'
                     }}
@@ -995,7 +995,7 @@ export default function Home() {
               {['هالي', 'هالو!'].map((word, index) => (
                 <motion.span
                   key={index}
-                  className="font-black text-6xl md:text-9xl"
+                  className="font-black text-4xl sm:text-6xl md:text-9xl"
                   initial={{ y: 50, scale: 0.5, opacity: 0 }}
                   animate={activeSlide === 12 ? { y: 0, scale: 1, opacity: 1 } : { y: 50, scale: 0.5, opacity: 0 }}
                   transition={{
@@ -1124,12 +1124,12 @@ export default function Home() {
                   <div className="relative flex items-center justify-center">
                     {/* Backing Solid Shadow */}
                     <div 
-                      className="absolute rounded-2xl w-[220px] h-[220px] bg-[#1E1E1E]"
-                      style={{ transform: 'translate(10px, 10px)' }}
+                      className="absolute rounded-2xl w-[170px] h-[170px] sm:w-[220px] sm:h-[220px] bg-[#1E1E1E]"
+                      style={{ transform: 'translate(8px, 8px)' }}
                     />
                     {/* Main Frame */}
                     <div 
-                      className="relative rounded-2xl w-[220px] h-[220px] bg-white flex items-center justify-center overflow-hidden"
+                      className="relative rounded-2xl w-[170px] h-[170px] sm:w-[220px] sm:h-[220px] bg-white flex items-center justify-center overflow-hidden"
                       style={{ border: '5px solid #1E1E1E' }}
                     >
                       <img 
@@ -1628,7 +1628,7 @@ export default function Home() {
               <img 
                 src="/images/logo.png" 
                 alt="Mr Nobel Logo" 
-                className="w-[320px] h-[320px] md:w-[440px] md:h-[440px] object-contain rounded-2xl select-none pointer-events-none"
+                className="w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] md:w-[440px] md:h-[440px] object-contain rounded-2xl select-none pointer-events-none"
                 style={{
                   filter: 'drop-shadow(0px 8px 24px rgba(0,0,0,0.2))'
                 }}
