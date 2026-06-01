@@ -554,7 +554,7 @@ export default function Home() {
           style={{ backgroundColor: 'var(--yellow)' }}
         >
           <div className="slide-inner" dir="rtl">
-            <div className="flex flex-col gap-4 text-right mb-10">
+            <div className="flex flex-col gap-4 text-right mb-6">
               <motion.p 
                 className="label label-orange self-start"
                 custom={0.1}
@@ -576,45 +576,44 @@ export default function Home() {
               </motion.h2>
             </div>
 
-            {/* Comic-style scrollable list */}
-            <div className="carousel-track reveal visible" style={{ direction: 'rtl' }}>
+            {/* 5-column grid for desktop, responsive grid for tablets/mobiles */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4" style={{ direction: 'rtl' }}>
               
               {/* Card 1 */}
-              <div className="format-card">
-                <div className="card-icon"><Award className="w-8 h-8 text-[#FF6B00]" /></div>
-                <h4 className="font-black text-xl mb-2" style={{ fontFamily: 'var(--font-cairo)' }}>🏆 المقارنات والتصنيفات</h4>
-                <p className="text-gray-700 text-sm font-semibold">تصنيفات مميزة تثير النقاشات الحادة وتشعل أقسام التعليقات. من أفضل الرياضيين إلى أغرب الاختراعات.</p>
+              <div className="format-card" style={{ minWidth: 'auto', maxWidth: 'none', padding: '20px 16px' }}>
+                <div className="card-icon" style={{ width: '48px', height: '48px', marginBottom: '12px' }}><Award className="w-6 h-6 text-[#FF6B00]" /></div>
+                <h4 className="font-black text-lg mb-1" style={{ fontFamily: 'var(--font-cairo)' }}>🏆 المقارنات</h4>
+                <p className="text-gray-700 text-xs font-semibold leading-normal">تصنيفات مميزة تثير النقاشات الحادة وتشعل أقسام التعليقات. من أفضل الرياضيين إلى أغرب الاختراعات.</p>
               </div>
 
               {/* Card 2 */}
-              <div className="format-card">
-                <div className="card-icon"><Sparkles className="w-8 h-8 text-[#00F0FF]" /></div>
-                <h4 className="font-black text-xl mb-2" style={{ fontFamily: 'var(--font-cairo)' }}>🧠 حقائق مذهلة</h4>
-                <p className="text-gray-700 text-sm font-semibold">حقائق تثير الدهشة تُقدم بمرئيات سينمائية وأسلوب مستر نوبل الخاص: &ldquo;لحظة، ماذا؟&rdquo;. العلوم والتاريخ وعلم النفس.</p>
+              <div className="format-card" style={{ minWidth: 'auto', maxWidth: 'none', padding: '20px 16px' }}>
+                <div className="card-icon" style={{ width: '48px', height: '48px', marginBottom: '12px' }}><Sparkles className="w-6 h-6 text-[#00F0FF]" /></div>
+                <h4 className="font-black text-lg mb-1" style={{ fontFamily: 'var(--font-cairo)' }}>🧠 حقائق مذهلة</h4>
+                <p className="text-gray-700 text-xs font-semibold leading-normal">حقائق تثير الدهشة تُقدم بمرئيات سينمائية وأسلوب مستر نوبل الخاص: &ldquo;لحظة، ماذا؟&rdquo;.</p>
               </div>
 
               {/* Card 3 */}
-              <div className="format-card">
-                <div className="card-icon"><MessageSquare className="w-8 h-8 text-[#FF0D39]" /></div>
-                <h4 className="font-black text-xl mb-2" style={{ fontFamily: 'var(--font-cairo)' }}>🎤 أسئلة الشارع</h4>
-                <p className="text-gray-700 text-sm font-semibold">ناس حقيقيون، إجابات حقيقية، ترفيه واقعي. محادثات عفوية في الشارع تكشف كيف يفكر الناس فعلاً.</p>
+              <div className="format-card" style={{ minWidth: 'auto', maxWidth: 'none', padding: '20px 16px' }}>
+                <div className="card-icon" style={{ width: '48px', height: '48px', marginBottom: '12px' }}><MessageSquare className="w-6 h-6 text-[#FF0D39]" /></div>
+                <h4 className="font-black text-lg mb-1" style={{ fontFamily: 'var(--font-cairo)' }}>🎤 أسئلة الشارع</h4>
+                <p className="text-gray-700 text-xs font-semibold leading-normal">ناس حقيقيون، إجابات حقيقية، ترفيه واقعي. محادثات عفوية تكشف كيف يفكر الناس فعلاً.</p>
               </div>
 
               {/* Card 4 */}
-              <div className="format-card">
-                <div className="card-icon"><Lightbulb className="w-8 h-8 text-[#FFD700]" /></div>
-                <h4 className="font-black text-xl mb-2" style={{ fontFamily: 'var(--font-cairo)' }}>💡 نصائح وخدع</h4>
-                <p className="text-gray-700 text-sm font-semibold">حيل حياتية ذكية وطرق مختصرة تُقدم بطاقة مستر نوبل المميزة وصفر ملل. عملية ومفاجئة وجاهزة للمشاركة.</p>
+              <div className="format-card" style={{ minWidth: 'auto', maxWidth: 'none', padding: '20px 16px' }}>
+                <div className="card-icon" style={{ width: '48px', height: '48px', marginBottom: '12px' }}><Lightbulb className="w-6 h-6 text-[#FFD700]" /></div>
+                <h4 className="font-black text-lg mb-1" style={{ fontFamily: 'var(--font-cairo)' }}>💡 نصائح وخدع</h4>
+                <p className="text-gray-700 text-xs font-semibold leading-normal">حيل حياتية ذكية وطرق مختصرة تُقدم بطاقة مستر نوبل وصفر ملل. عملية ومفاجئة للجميع.</p>
               </div>
 
               {/* Card 5 */}
-              <div className="format-card">
-                <div className="card-icon"><BookOpen className="w-8 h-8 text-[#A855F7]" /></div>
-                <h4 className="font-black text-xl mb-2" style={{ fontFamily: 'var(--font-cairo)' }}>📖 صناعة القصص</h4>
-                <p className="text-gray-700 text-sm font-semibold">سرد قصصي مشوق يمزج التاريخ والغموض والدراما الإنسانية في حلقات مشوقة تجعلك تنسى الشاشة.</p>
+              <div className="format-card" style={{ minWidth: 'auto', maxWidth: 'none', padding: '20px 16px' }}>
+                <div className="card-icon" style={{ width: '48px', height: '48px', marginBottom: '12px' }}><BookOpen className="w-6 h-6 text-[#A855F7]" /></div>
+                <h4 className="font-black text-lg mb-1" style={{ fontFamily: 'var(--font-cairo)' }}>📖 صناعة القصص</h4>
+                <p className="text-gray-700 text-xs font-semibold leading-normal">سرد قصصي مشوق يمزج التاريخ والغموض والدراما الإنسانية في حلقات تجعلك تنسى الشاشة.</p>
               </div>
             </div>
-            <p className="text-[#1E1E1E]/40 text-xs text-center mt-4 font-black">← اسحب لليمين أو اليسار للاستكشاف والتحرك ←</p>
           </div>
         </section>
 
